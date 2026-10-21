@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from 'react-redux';
 
+import { setUserData } from "../../redux/userSlice";
+
 
 const Signup = () => {
 

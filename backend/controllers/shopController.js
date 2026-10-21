@@ -41,11 +41,11 @@ const editShop = async (req, res) => {
         const shop = await Shop.findByIdAndUpdate(
             shopId,
             {
-                name, 
-                city, 
-                state, 
-                address, 
-                image, 
+                name,
+                city,
+                state,
+                address,
+                image,
                 owner: req.userId
             },
             { new: true }
@@ -65,8 +65,21 @@ const editShop = async (req, res) => {
     }
 }
 
+const getShop = async (req, res) => {
+    try {
+        const shop=await Shop.findOne({owner:req.userId}).populate("owner items");
+        if(!shop){
+            return null
+        }
+        return res.status(200).json(shop)
+    } catch (error) {
+        return res.status(500).json({message:`get shop error==== ${error}`})
+    }
+}
+
 module.exports = {
     createShop,
     editShop,
-    
+    getShop,
+
 }
