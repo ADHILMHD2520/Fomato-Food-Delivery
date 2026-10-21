@@ -1,0 +1,26 @@
+# Tutorial / personal notes
+token.txt
+tailwindcss.txt
+redux.txt
+front_tut.txt
+back_tut.txt
+
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.local
+
+# Build files
+dist/
+build/
+
+# Logs
+*.log
+
+# Uploads
+uploads/
+
+# VS Code
+.vscode/
