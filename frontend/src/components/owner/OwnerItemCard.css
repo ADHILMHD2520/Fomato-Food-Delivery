@@ -1,0 +1,133 @@
+.owner-items-section {
+    width: 100%;
+    margin-top: 35px;
+}
+
+.owner-items-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.owner-items-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.owner-item-card {
+    width: 220px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: 0.2s ease;
+    margin: 10px;
+}
+
+.owner-item-card:hover {
+    transform: translateY(-3px);
+}
+
+.owner-item-image-container {
+    position: relative;
+    width: 100%;
+    height: 125px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.owner-item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.food-type {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 4px 7px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: capitalize;
+    background: #fff;
+}
+
+.food-type.veg {
+    color: green;
+}
+
+.food-type.non-veg {
+    color: red;
+}
+
+.owner-item-content {
+    padding: 0 12px 12px;
+}
+
+.owner-item-content h3 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #222;
+}
+
+.item-category {
+    margin: 0 0 10px;
+    color: #777;
+    font-size: 13px;
+}
+
+.item-price {
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #e67e22;
+}
+
+.item-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-item-btn,
+.delete-item-btn {
+    border: none;
+    padding: 7px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+}
+
+.edit-item-btn {
+    background: #f1f1f1;
+    color: #333;
+}
+
+.delete-item-btn {
+    background: #ffe5e5;
+    color: #d00;
+}
+
+.item-loading {
+    text-align: center;
+    margin-top: 30px;
+    color: #777;
+}
+
+.no-items {
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    color: #777;
+}

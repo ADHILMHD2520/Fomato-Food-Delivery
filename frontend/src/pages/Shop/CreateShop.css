@@ -1,0 +1,16 @@
+.shop-create-header{
+    color: tomato;
+}
+
+label{
+    color: orangered;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #f97316;
+}
+
+.submit-btn{
+    cursor: pointer;
+}

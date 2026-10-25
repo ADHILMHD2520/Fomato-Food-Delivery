@@ -11,7 +11,7 @@ const shopSchema = new mongoose.Schema({
     },
     owner: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Users"
+        ref: "User"
     },
     city: {
         type: String,
@@ -25,7 +25,7 @@ const shopSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    item: {
+    items: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Items"
     }

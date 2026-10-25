@@ -16,11 +16,14 @@ const createShop = async (req, res) => {
             name, city, state, address, image, owner: req.userId
         })
 
-        await shop.populate("owner")
+        await shop.populate("owner items")
         return res.status(201).json(shop);
 
     } catch (error) {
-        return res.status(500).json({ message: `create shop error === ${error}` });
+        console.log("create shop error:", error);
+        return res.status(500).json({
+            message: `create shop error === ${error.message || JSON.stringify(error)}`
+        })
     }
 
 }
@@ -57,7 +60,7 @@ const editShop = async (req, res) => {
             });
         }
 
-        await shop.populate("owner")
+        await shop.populate("owner items")
         return res.status(200).json(shop);
 
     } catch (error) {
@@ -67,13 +70,15 @@ const editShop = async (req, res) => {
 
 const getShop = async (req, res) => {
     try {
-        const shop=await Shop.findOne({owner:req.userId}).populate("owner items");
-        if(!shop){
-            return null
+        const shop = await Shop.findOne({ owner: req.userId }).populate("owner items");
+        if (!shop) {
+            return res.status(404).json({
+                message: "Shop not found"
+            });
         }
         return res.status(200).json(shop)
     } catch (error) {
-        return res.status(500).json({message:`get shop error==== ${error}`})
+        return res.status(500).json({ message: `get shop error==== ${error}` })
     }
 }
 
