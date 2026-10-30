@@ -5,12 +5,16 @@ import { useNavigate } from "react-router-dom";
 import "./OwnerDashboard.css"
 import { TbReceipt2 } from "react-icons/tb";
 import { logout } from "../../redux/userSlice";
+import { clearShopData } from "../../redux/ownerSlice";
 import OwnerItemCard from "../../components/owner/OwnerItemCard";
+import useGetCurrentShop from "../../hooks/useGetCurrentShop";
 
 import { FaUtensils } from "react-icons/fa";
 import { FaPen } from "react-icons/fa";
 
 const OwnerDashboard = () => {
+
+    useGetCurrentShop();
 
     const { userData } = useSelector(state => state.user);
     const { shopData } = useSelector(state => state.owner);
@@ -23,6 +27,7 @@ const OwnerDashboard = () => {
     const handleLogout = () => {
         localStorage.removeItem("token");
         dispatch(logout());
+        dispatch(clearShopData());
         navigate("/signin");
     };
 
@@ -31,6 +36,7 @@ const OwnerDashboard = () => {
 
             {/* Navbar */}
             <div className='navbar'>
+
 
                 <h1>Foody</h1>
 

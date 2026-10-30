@@ -8,6 +8,8 @@
     font-weight: 700;
     margin-bottom: 20px;
     color: #222;
+    align-items: center;
+    text-align: center;
 }
 
 .owner-items-grid {
