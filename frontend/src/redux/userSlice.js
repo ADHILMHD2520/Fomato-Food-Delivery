@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     userData: null,
-    city: null
+    city: null,
+    shopsInMyCity: null
 };
 
 const userSlice = createSlice({
@@ -18,6 +19,10 @@ const userSlice = createSlice({
             state.city = action.payload;
         },
 
+        setShopsInMyCity: (state, action) => {
+            state.shopsInMyCity = action.payload;
+        },
+
         logout: (state) => {
             state.userData = null;
             state.city = null;
@@ -28,6 +33,7 @@ const userSlice = createSlice({
 export const {
     setUserData,
     setCity,
+    setShopsInMyCity,
     logout
 } = userSlice.actions;
 

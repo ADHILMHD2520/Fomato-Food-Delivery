@@ -32,9 +32,7 @@ const createShop = async (req, res) => {
 const editShop = async (req, res) => {
     try {
         const { name, city, state, address } = req.body;
-
         let image;
-
         if (req.file) {
             image = await uploadOnCloudinary(req.file.path)
         }
@@ -82,9 +80,27 @@ const getShop = async (req, res) => {
     }
 }
 
+const getShopByCity = async (req, res) => {
+    try {
+
+        const { city } = req.params
+        const shops = await Shop.find({
+            city: { $regex: new RegExp(`^${city}$`, "i") }
+        }).populate('items')
+
+        if(!shops){
+            return res.status(400).json({message:`there are no shops in this ${city}`})
+        }
+        return res.status(200).json(shops)
+    } catch (error) {
+        return res.status(500).json({message:`get shop by city error == ${error}`})
+    }
+}
+
 module.exports = {
     createShop,
     editShop,
     getShop,
+    getShopByCity,
 
 }

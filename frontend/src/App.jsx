@@ -15,6 +15,7 @@ import useGetCurrentShop from './hooks/useGetCurrentShop';
 import CreateShop from './pages/Shop/CreateShop';
 import AddItem from './pages/Shop/AddItem';
 import EditItem from "./pages/Shop/EditItem";
+import useGetShopByCity from './hooks/useGetShopByCity';
 
 function App() {
   const {userData}=useSelector((state) => state.user);
@@ -22,6 +23,7 @@ function App() {
   useCurrentUser();
   useGetCity();
   useGetCurrentShop();
+  useGetShopByCity();
   return (
     <>
       <Routes>
