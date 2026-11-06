@@ -218,12 +218,13 @@ body {
     /* w-full */
 }
 
-.shops{
+.food,.shops{
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 40px;
     box-sizing: border-box;
+    margin-bottom: 0;
 }
 
 .shops h1{
@@ -231,4 +232,26 @@ body {
     color: #1f2937;
     font-size: 26px;
     font-weight: 600;
+}
+
+.food {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 40px 40px;
+    box-sizing: border-box;
+}
+
+.food h1{
+    color: #1f2937;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.food-items{
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+    justify-content: center;
+    
 }

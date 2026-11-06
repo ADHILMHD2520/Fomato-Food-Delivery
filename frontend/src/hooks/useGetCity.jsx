@@ -18,7 +18,8 @@ function useGetCity() {
                     `https://api.geoapify.com/v1/geocode/reverse?lat=${latitude}&lon=${longitude}&format=json&apiKey=${apikey}`
                 );
 
-                const city = result.data.results[0].city;
+                const city = result.data.results[0].city || "Kadiyangad Palam";
+                // const city = "Kadiyangad Palam";
 
                 console.log("City:", city);
 

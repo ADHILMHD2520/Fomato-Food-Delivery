@@ -7,7 +7,8 @@ const {
     editItem,
     getItems,
     getItem,
-    deleteItem
+    deleteItem,
+    getItemsByCity
 } = require("../controllers/itemController");
 
 const router = express.Router();
@@ -17,5 +18,6 @@ router.put("/edit-item/:itemId", isAuth, upload.single("image"), editItem);
 router.get("/get-items/:shopId", isAuth, getItems);
 router.get("/get-item/:itemId", isAuth, getItem);
 router.delete("/delete-item/:itemId", isAuth, deleteItem);
+router.get("/get-by-city/:city", isAuth, getItemsByCity);
 
 module.exports = router;

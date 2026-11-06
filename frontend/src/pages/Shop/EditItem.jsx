@@ -5,17 +5,21 @@ import { IoMdArrowBack } from "react-icons/io";
 import "./EditItem.css";
 
 const categories = [
-    "Snacks",
-    "Main Course",
-    "Desserts",
+    "Biriyani",
     "Pizza",
-    "Burgers",
-    "Sandwiches",
+    "Burger",
+    "Fried Chicken",
+    "Shawarma",
+    "Chinese",
     "South Indian",
     "North Indian",
-    "Chinese",
-    "Fast Food",
-    "Others"
+    "Noodles",
+    "Dosa",
+    "Desserts",
+    "Ice Creams",
+    "Cakes",
+    "Drinks",
+    "Healthy Food"
 ];
 
 const EditItem = () => {

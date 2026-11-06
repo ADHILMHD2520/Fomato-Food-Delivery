@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     userData: null,
     city: null,
-    shopsInMyCity: null
+    shopsInMyCity: null,
+    itemsInCity:null
 };
 
 const userSlice = createSlice({
@@ -23,6 +24,10 @@ const userSlice = createSlice({
             state.shopsInMyCity = action.payload;
         },
 
+        setItemsInCity:(state,action)=>{
+            state.itemsInCity=action.payload
+        },
+
         logout: (state) => {
             state.userData = null;
             state.city = null;
@@ -34,6 +39,7 @@ export const {
     setUserData,
     setCity,
     setShopsInMyCity,
+    setItemsInCity,
     logout
 } = userSlice.actions;
 
