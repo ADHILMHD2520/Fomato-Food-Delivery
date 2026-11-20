@@ -1,0 +1,187 @@
+.hero-banner {
+    width: 100%;
+    height: 235px;
+    min-height: 235px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    padding: 25px 8%;
+
+    box-sizing: border-box;
+
+    border-radius: 23px;
+
+    background: linear-gradient(105deg,
+            #fff3e9 0%,
+            #fff0e5 48%,
+            #ff9226 100%);
+    border: 1px solid #ffe3cf;
+
+    margin: 72px auto 25px;
+}
+
+/* CONTENT */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-subtitle {
+    color: #ed5709;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.hero-content h1 {
+    margin: 5px 0 10px;
+
+    color: #283242;
+
+    font-size: 36px;
+    line-height: 1.08;
+    font-weight: 850;
+}
+
+.hero-content h1 span {
+    color: #ed5709;
+}
+
+.hero-content p {
+    margin: 0 0 12px;
+
+    color: #4c5665;
+
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* ORDER BUTTON */
+
+.hero-order-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 11px 26px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #f15a0a;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(241, 90, 10, 0.2);
+    transition: 0.25s ease;
+}
+
+.hero-order-btn:hover {
+    background: #d94c00;
+    transform: translateY(-2px);
+}
+
+/* FOOD IMAGE */
+
+.hero-image {
+    position: absolute;
+
+    right: 5%;
+    top: 0;
+
+    width: 46%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 115%;
+
+    object-fit: contain;
+
+    filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.15));
+}
+
+/* SLIDER DOTS */
+
+.hero-dots {
+    position: absolute;
+    left: 52%;
+    bottom: -5px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero-dots span {
+    width: 14px;
+    height: 9px;
+
+    border-radius: 20px;
+    background: #f5d7c8;
+}
+
+.hero-dots span.active {
+    width: 21px;
+    background: #f15a0a;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    .hero-banner {
+        height: 220px;
+        padding: 20px 5%;
+    }
+
+    .hero-content h1 {
+        font-size: 29px;
+    }
+
+    .hero-image {
+        width: 43%;
+        right: 2%;
+    }
+}
+
+@media (max-width: 550px) {
+    .hero-banner {
+        height: 370px;
+        align-items: flex-start;
+        padding: 25px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 12px;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 180px;
+        top: auto;
+        bottom: 0;
+        right: 0;
+    }
+
+    .hero-dots {
+        display: none;
+    }
+}

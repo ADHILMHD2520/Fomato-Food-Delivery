@@ -4,12 +4,14 @@ import { useNavigate } from "react-router-dom";
 
 import './UserDashboard.css'
 
-import UserNavbar from './UserNavbar';
+import UserNavbar from '../../components/user/UserNavbar';
 
+import HeroBanner from "../../components/user/HeroBanner";
 import categories from "../../data/categories"
-import CategoryCard from './CategoryCard';
-import ShopCard from "./ShopCard";
-import FoodCard from "./FoodCard";
+import CategoryCard from '../../components/user/CategoryCard';
+import ShopCard from "../../components/user/ShopCard";
+import FoodCard from "../../components/user/FoodCard";
+import NearbyRestaurantsMap from "../../components/user/NearbyRestaurantsMap";
 
 function UserDashboard() {
   const { userData, city, shopsInMyCity, itemsInCity } = useSelector(state => state.user);
@@ -67,6 +69,9 @@ function UserDashboard() {
     setCanShopScrollRight(element.scrollLeft < maxScroll - 5);
   };
 
+
+  const hasShops = shopsInMyCity?.length > 0;
+
   useEffect(() => {
     updateScrollButtons();
     updateShopScrollButtons();
@@ -81,8 +86,17 @@ function UserDashboard() {
   }, [shopsInMyCity]);
 
   return (
-    <div className='container'>
+    <div className="container">
       <UserNavbar />
+
+      <HeroBanner
+        onOrderClick={() => {
+          categoriesRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+        }}
+      />
       <div className='inspiration-container'>
         <h1>Inspiration for Your First Order</h1>
 
@@ -111,52 +125,78 @@ function UserDashboard() {
         </div>
       </div>
 
-      <div className="shops">
-        <h1>Best Shops in {city}</h1>
-        <div className="categories-wrapper">
-          {canShopScrollLeft && (
-            <button
-              className="category-prev-button"
-              onClick={scrollShopsLeft}
-            >
-              ‹
-            </button>
-          )}
 
-          <div
-            className="categories-container"
-            ref={shopsRef}
-            onScroll={updateShopScrollButtons}
-          >
-            {shopsInMyCity?.map((shop) => (
-              <ShopCard data={shop} key={shop._id} />
+
+
+      {hasShops ? (
+        <div className="shops">
+          <h1>Best Shops in {city}</h1>
+
+          <div className="shops-wrapper">
+
+            {canShopScrollLeft && (
+              <button
+                className="category-prev-button"
+                onClick={scrollShopsLeft}
+              >
+                ‹
+              </button>
+            )}
+
+            <div
+              className="shop-container"
+              ref={shopsRef}
+              onScroll={updateShopScrollButtons}
+            >
+              {shopsInMyCity?.map((shop) => (
+                <ShopCard
+                  data={shop}
+                  key={shop._id}
+                />
+              ))}
+            </div>
+
+            {canShopScrollRight && (
+              <button
+                className="category-next-button"
+                onClick={scrollShopsRight}
+              >
+                ›
+              </button>
+            )}
+
+          </div>
+        </div>
+      ) : (
+        <div className="no-shops">
+          <h2>No shops available in {city}</h2>
+          <p>
+            We're sorry! There are currently no restaurants
+            available in your selected location.
+          </p>
+        </div>
+      )}
+
+      {hasShops ? (
+        <div className="food">
+          <h1>Suggested Food Items</h1>
+
+          <div className="food-items">
+            {itemsInCity?.map((item, index) => (
+              <FoodCard
+                key={item._id || index}
+                data={item}
+              />
             ))}
           </div>
-
-          {canShopScrollRight && (
-            <button
-              className="category-next-button"
-              onClick={scrollShops}
-            >
-              ›
-            </button>
-          )}
-
         </div>
-      </div>
-
-      <div className="food">
-        <h1>
-          Suggested Food Items
-        </h1>
-        <div className="food-items">
-          {itemsInCity?.map((item,index)=>(
-            <FoodCard key={index} data={item}/>
-          ))}
+      ) : (
+        <div className="food">
+          <NearbyRestaurantsMap />
         </div>
-      </div>
+      )}
     </div>
-  )
+  );
 }
 
-export default UserDashboard
+export default UserDashboard;

@@ -1,0 +1,68 @@
+.cart-page {
+    min-height: 100vh;
+    background: #fff9f6;
+}
+
+.cart-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-page-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #222;
+    /* padding: 90px 40px 40px;*/
+    margin: 50px 50px;
+
+}
+
+.empty-cart-message {
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;
+    text-align: center;
+    margin-top: 40px;
+    padding: 60px;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    font-size: 18px;
+}
+
+.checkout-btn {
+    width: 30%;
+    display: block;
+    width: auto;
+    /* was 30%, so it fits the text */
+    margin-left: auto;
+    /* pushes it to the right, replaces justify-content: end */
+    padding: 15px 32px;
+    /* was 15px, so there's room around the text */
+    margin-top: 20px;
+    justify-content: end;
+    padding: 15px;
+    margin-top: 20px;
+    background: #ff6b35;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background: #e85a28;
+}

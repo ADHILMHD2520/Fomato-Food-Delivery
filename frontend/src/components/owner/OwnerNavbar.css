@@ -1,0 +1,279 @@
+
+.owner-navbar {
+    width: 100%;
+    min-height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 35px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+/* LEFT SECTION */
+
+.owner-navbar-left h2 {
+    margin: 0;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    color: #222222;
+}
+
+.owner-navbar-left p {
+    margin: 4px 0 0;
+
+    font-size: 12px;
+    color: #888888;
+}
+
+
+/* RIGHT SECTION */
+
+.owner-navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+
+/* NOTIFICATION */
+
+.owner-notification-btn {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 19px;
+    color: #555555;
+
+    cursor: pointer;
+}
+
+.notification-dot {
+    position: absolute;
+
+    top: 7px;
+    right: 7px;
+
+    width: 8px;
+    height: 8px;
+
+    background: #ff5722;
+    border-radius: 50%;
+}
+
+
+/* ORDERS BUTTON */
+
+.owner-orders-btn {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 11px 17px;
+
+    border: 1px solid #ff641f;
+    border-radius: 9px;
+
+    background: white;
+    color: #ff641f;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.owner-orders-btn:hover {
+    background: #fff1e9;
+}
+
+.owner-orders-btn svg {
+    font-size: 18px;
+}
+
+
+/* PROFILE */
+
+.owner-profile-wrapper {
+    position: relative;
+}
+
+.owner-profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 5px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.owner-avatar {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ff641f;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.owner-user-name {
+    max-width: 140px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    color: #333333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.owner-dropdown-icon {
+    font-size: 12px;
+    color: #777777;
+}
+
+
+/* DROPDOWN */
+
+.owner-profile-dropdown {
+    position: absolute;
+
+    top: 55px;
+    right: 0;
+
+    width: 220px;
+
+    padding: 15px;
+
+    background: white;
+
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.profile-user-info strong {
+    font-size: 14px;
+    color: #222222;
+}
+
+.profile-user-info span {
+    font-size: 12px;
+    color: #888888;
+    overflow-wrap: anywhere;
+}
+
+.profile-dropdown-divider {
+    height: 1px;
+    background: #eeeeee;
+    margin: 13px 0;
+}
+
+
+/* LOGOUT */
+
+.owner-logout-btn {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #e53935;
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.owner-logout-btn:hover {
+    background: #fff1f0;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .owner-navbar {
+        min-height: 70px;
+        padding: 0 15px;
+    }
+
+    .owner-navbar-left h2 {
+        font-size: 17px;
+    }
+
+    .owner-navbar-left p {
+        font-size: 10px;
+    }
+
+    .owner-navbar-right {
+        gap: 9px;
+    }
+
+    .owner-orders-btn {
+        padding: 9px;
+    }
+
+    .owner-orders-btn span {
+        display: none;
+    }
+
+    .owner-user-name,
+    .owner-dropdown-icon {
+        display: none;
+    }
+
+    .owner-avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+}

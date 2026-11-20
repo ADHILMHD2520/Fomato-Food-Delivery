@@ -67,7 +67,6 @@ const OwnerDashboard = () => {
                 </div>
 
                 <div className="user-wrapper">
-
                     <div
                         className='user'
                         onClick={() => setShowInfo(!showInfo)}
@@ -150,3 +149,19 @@ const OwnerDashboard = () => {
 }
 
 export default OwnerDashboard;
+
+
+// import React from 'react'
+// import OwnerNavbar from './OwnerNavbar'
+// import OwnerSidebar from './OwnerSidebar'
+
+// const OwnerDashboard = () => {
+//   return (
+//     <div className='container flex'>
+//         <OwnerNavbar/>
+//         <OwnerSidebar/>
+//     </div>
+//   )
+// }
+
+// export default OwnerDashboard

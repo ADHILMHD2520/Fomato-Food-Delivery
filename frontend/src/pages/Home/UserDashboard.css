@@ -2,6 +2,7 @@ body {
     background-color: #fff9f6;
 }
 
+
 .navbar {
     width: 100%;
     height: 60px;
@@ -129,6 +130,7 @@ body {
     margin: 0 auto;
     padding: 90px 40px 40px;
     box-sizing: border-box;
+    margin-top: 25px;
 }
 
 .inspiration-container h1 {
@@ -138,9 +140,20 @@ body {
     font-weight: 600;
 }
 
-.categories-wrapper {
+.shops-wrapper,.categories-wrapper {
     position: relative;
     width: 100%;
+}
+
+.shop-container {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding: 5px 0 15px;
+    justify-content: center;
 }
 
 .categories-container {
@@ -218,16 +231,18 @@ body {
     /* w-full */
 }
 
-.food,.shops{
+.food,
+.shops {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 40px;
     box-sizing: border-box;
     margin-bottom: 0;
+    justify-content: center;
 }
 
-.shops h1{
+.shops h1 {
     margin: 0 0 25px;
     color: #1f2937;
     font-size: 26px;
@@ -242,16 +257,42 @@ body {
     box-sizing: border-box;
 }
 
-.food h1{
+.food h1 {
     color: #1f2937;
     font-size: 26px;
     font-weight: 600;
 }
 
-.food-items{
+.food-items {
     display: flex;
     gap: 50px;
     margin-top: 50px;
     justify-content: center;
-    
+
+}
+
+.no-shops {
+    width: 100%;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+    border-radius: 16px;
+    margin: 25px 0;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.no-shops h2 {
+    color: #e9570d;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.no-shops p {
+    color: #777;
+    font-size: 14px;
 }

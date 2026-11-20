@@ -1,0 +1,522 @@
+.foody-navbar {
+    width: 100%;
+    height: 72px;
+    padding: 0 5.5%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid #f4eee9;
+
+    font-family: "Segoe UI", sans-serif;
+}
+
+
+/* ================= LOGO ================= */
+
+.foody-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #f15a0a;
+    font-size: 29px;
+    font-weight: 800;
+
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.foody-logo-icon {
+    font-size: 34px;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+.foody-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.foody-nav-link {
+    padding: 10px 17px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: transparent;
+    color: #394150;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.foody-nav-link:hover {
+    color: #f15a0a;
+    background: #fff3ec;
+}
+
+.foody-nav-link.active {
+    color: #f15a0a;
+    background: #fff0e7;
+}
+
+
+/* ================= SEARCH ================= */
+
+.foody-search-container {
+    width: 340px;
+    height: 43px;
+    padding: 0 13px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    border: 1px solid #f3eae5;
+    border-radius: 30px;
+
+    background: white;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.foody-location {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    color: #e9570d;
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.foody-location span {
+    max-width: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.foody-search {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #303947;
+}
+
+.foody-search input {
+    width: 100%;
+    min-width: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #303947;
+    font-size: 12px;
+}
+
+.foody-search input::placeholder {
+    color: #9299a2;
+}
+
+
+/* ================= CART ================= */
+
+.foody-cart {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    color: #f15a0a;
+    cursor: pointer;
+}
+
+.foody-cart-count {
+    position: absolute;
+    top: -7px;
+    right: -8px;
+
+    width: 18px;
+    height: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f15a0a;
+    color: white;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* ================= ORDERS ================= */
+
+.foody-orders {
+    padding: 11px 22px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #fff0e7;
+    color: #e9570d;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+}
+
+.foody-orders:hover {
+    background: #ffe2d1;
+}
+
+
+/* ================= PROFILE ================= */
+
+.foody-profile-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.foody-profile {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f36b0b;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.foody-profile-arrow {
+    color: #e9570d;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+
+/* ================= PROFILE DROPDOWN ================= */
+
+.foody-profile-dropdown {
+    position: absolute;
+    top: 52px;
+    right: 0;
+
+    width: 180px;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    border: 1px solid #f3e8e0;
+    border-radius: 12px;
+
+    background: white;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.foody-profile-name {
+    margin: 0;
+    color: #303947;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.foody-profile-dropdown button {
+    padding: 9px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #fff0e7;
+    color: #e9570d;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-align: left;
+    cursor: pointer;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1150px) {
+    .foody-navbar {
+        gap: 13px;
+        padding: 0 3%;
+    }
+
+    .foody-search-container {
+        width: 270px;
+    }
+
+    .foody-nav-link {
+        padding: 9px 11px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 900px) {
+    .foody-navbar {
+        gap: 10px;
+    }
+
+    .foody-logo {
+        font-size: 23px;
+    }
+
+    .foody-search-container {
+        flex: 1;
+        width: auto;
+        min-width: 170px;
+    }
+
+    .foody-nav-link {
+        padding: 8px;
+    }
+
+    .foody-orders {
+        padding: 9px 12px;
+    }
+}
+
+@media (max-width: 650px) {
+    .foody-navbar {
+        height: 65px;
+        padding: 0 14px;
+        gap: 12px;
+    }
+
+    .foody-logo {
+        font-size: 21px;
+    }
+
+    .foody-logo-icon {
+        font-size: 25px;
+    }
+
+    .foody-nav-links {
+        display: none;
+    }
+
+    .foody-search-container {
+        min-width: 0;
+        height: 39px;
+        padding: 0 10px;
+    }
+
+    .foody-location {
+        display: none;
+    }
+
+    .foody-search input {
+        font-size: 11px;
+    }
+
+    .foody-orders {
+        display: none;
+    }
+
+    .foody-profile {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 380px) {
+    .foody-logo {
+        font-size: 18px;
+    }
+
+    .foody-profile {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+
+
+/* LOCATION WRAPPER */
+
+.foody-location-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* LOCATION BUTTON */
+
+.foody-location {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 8px 5px;
+
+    border: none;
+    background: transparent;
+
+    color: #f15a0a;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.foody-location span {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.location-arrow {
+    font-size: 12px;
+    color: #555;
+}
+
+/* LOCATION DROPDOWN */
+
+.location-dropdown {
+    position: absolute;
+    top: 48px;
+    left: 0;
+
+    width: 280px;
+    padding: 18px;
+
+    background: white;
+    border: 1px solid #f0e5df;
+    border-radius: 15px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+
+    z-index: 1100;
+}
+
+.location-dropdown h3 {
+    margin: 0 0 5px;
+    color: #283242;
+    font-size: 16px;
+}
+
+.location-dropdown p {
+    margin: 0 0 15px;
+    color: #9299a2;
+    font-size: 12px;
+}
+
+/* SEARCH CITY */
+
+.location-search {
+    height: 40px;
+    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    border: 1px solid #eee2db;
+    border-radius: 9px;
+
+    color: #f15a0a;
+}
+
+.location-search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 13px;
+}
+
+/* CITY LIST */
+
+.location-list {
+    max-height: 230px;
+    margin-top: 10px;
+    overflow-y: auto;
+}
+
+.location-option {
+    width: 100%;
+    padding: 11px 9px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #424b59;
+
+    font-size: 13px;
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.location-option:hover {
+    background: #fff3ec;
+    color: #f15a0a;
+}
+
+.location-option.selected {
+    background: #fff0e7;
+    color: #f15a0a;
+    font-weight: 700;
+}
+
+.location-option span {
+    margin-left: auto;
+    color: #f15a0a;
+}

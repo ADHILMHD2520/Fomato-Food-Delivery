@@ -88,19 +88,32 @@ const getShopByCity = async (req, res) => {
             city: { $regex: new RegExp(`^${city}$`, "i") }
         }).populate('items')
 
-        if(!shops){
-            return res.status(400).json({message:`there are no shops in this ${city}`})
+        if (!shops) {
+            return res.status(400).json({ message: `there are no shops in this ${city}` })
         }
         return res.status(200).json(shops)
     } catch (error) {
-        return res.status(500).json({message:`get shop by city error == ${error}`})
+        return res.status(500).json({ message: `get shop by city error == ${error}` })
     }
 }
+
+const getAllShops = async (req, res) => {
+    try {
+        const shops = await Shop.find({}).populate("owner items");
+
+        res.status(200).json(shops)
+
+    } catch (error) {
+        res.status(500).json({message:`getAll Shops error ${error}`})
+    }
+}
+
 
 module.exports = {
     createShop,
     editShop,
     getShop,
     getShopByCity,
+    getAllShops
 
 }

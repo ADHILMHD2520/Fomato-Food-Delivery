@@ -8,7 +8,7 @@ import Signup from './pages/authentication/Signup'
 import ForgotPassword from './pages/authentication/ForgotPassword'
 import useCurrentUser from './hooks/useCurrentUser'
 import Home from './pages/Home/Home'
-import UserDashboard from './components/user/UserDashboard'
+
 import useGetCity from './hooks/useGetCity'
 import { useSelector } from 'react-redux'
 import useGetCurrentShop from './hooks/useGetCurrentShop';
@@ -17,10 +17,13 @@ import AddItem from './pages/Shop/AddItem';
 import EditItem from "./pages/Shop/EditItem";
 import useGetShopByCity from './hooks/useGetShopByCity';
 import useGetItemsByCity from './hooks/useGetItemsByCity';
+import Restaurant from './pages/Shop/Restaurant';
+import CartPage from './pages/Cart/CartPage';
+import Checkout from './pages/checkout/Checkout';
 
 
 function App() {
-  const {userData}=useSelector((state) => state.user);
+  const { userData } = useSelector((state) => state.user);
 
   useCurrentUser();
   useGetCity();
@@ -39,12 +42,14 @@ function App() {
         <Route path="/add-item" element={<AddItem />} />
         <Route path="/edit-item/:itemId" element={<EditItem />} />
 
-
-
         <Route path="/" element={<Home />} />
 
+        <Route path="/restaurants" element={<Restaurant />} />
 
-        <Route path="/user" element={<UserDashboard />} />
+        <Route path='/cart' element={<CartPage />} />
+
+        <Route path='/checkout' element={<Checkout />} />
+
 
 
       </Routes>

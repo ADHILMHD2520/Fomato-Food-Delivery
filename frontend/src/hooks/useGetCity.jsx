@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-import { setCity } from "../redux/userSlice"; // adjust path if needed
+import { setCity, setUserLocation } from "../redux/userSlice"; 
 
 function useGetCity() {
     const dispatch = useDispatch();
@@ -13,6 +13,10 @@ function useGetCity() {
             try {
                 const latitude = position.coords.latitude;
                 const longitude = position.coords.longitude;
+
+                dispatch(setUserLocation({
+                    latitude,longitude
+                }))
 
                 const result = await axios.get(
                     `https://api.geoapify.com/v1/geocode/reverse?lat=${latitude}&lon=${longitude}&format=json&apiKey=${apikey}`
