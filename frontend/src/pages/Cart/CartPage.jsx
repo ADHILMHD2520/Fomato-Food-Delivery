@@ -3,9 +3,11 @@ import "./CartPage.css"
 import UserNavbar from '../../components/user/UserNavbar'
 import { useSelector } from 'react-redux'
 import CartItemCard from '../../components/user/CartItemCard'
-import { Navigate } from 'react-router-dom'
+import { useNavigate  } from 'react-router-dom'
 const CartPage = () => {
     const { cartItems } = useSelector(state => state.user)
+
+    const navigate = useNavigate();
 
     // for showing total amount at the end of cart
     const totalAmount = useSelector(state =>
@@ -37,7 +39,7 @@ const CartPage = () => {
                         </div>
                         <button
                             className="checkout-btn"
-                            onClick={() => Navigate("/checkout")}
+                            onClick={() => navigate("/checkout")}
                         >
                             Proceed to Checkout
                         </button>
