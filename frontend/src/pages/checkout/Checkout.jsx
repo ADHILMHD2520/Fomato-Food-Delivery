@@ -169,6 +169,8 @@ const Checkout = () => {
             </label>
           </div>
         </section>
+
+        
         <section className="checkout-section order-summary">
           <h2 className="checkout-label">Order Summary</h2>
           <div className="summary-box">
