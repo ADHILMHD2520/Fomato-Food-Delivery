@@ -1,0 +1,209 @@
+* {
+  box-sizing: border-box;
+}
+
+.checkout-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 34px 16px;
+  background: #fff9f6;
+  color: #30343b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.checkout-card {
+  width: min(100%, 650px);
+  padding: 22px 24px 20px;
+  background: #fff;
+  border-radius: 13px;
+  box-shadow: 0 7px 22px rgba(35, 30, 25, 0.13);
+}
+
+.checkout-title {
+  margin: 0 0 18px;
+  color: #252a31;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.checkout-section {
+  margin-bottom: 19px;
+}
+
+.checkout-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 9px;
+  color: #353a40;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.location-icon {
+  color: #ed5039;
+  font-size: 12px;
+}
+
+.address-controls {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 8px;
+}
+
+.address-controls input {
+  min-width: 0;
+  flex: 1;
+  height: 38px;
+  padding: 0 11px;
+  border: 1px solid #dedede;
+  border-radius: 7px;
+  outline: none;
+  color: #343a40;
+  font-size: 12px;
+}
+
+.address-controls input:focus {
+  border-color: #ed5039;
+}
+
+.icon-button {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 7px;
+  color: white;
+  font-size: 21px;
+}
+
+.search-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff4d2d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #e63e22;
+}
+
+.search-button { background: #f45135; }
+.locate-button { background: #287be8; cursor: pointer; }
+
+.search-icon {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.search-icon::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 2px;
+  background: white;
+  right: -5px;
+  bottom: -3px;
+  transform: rotate(45deg);
+}
+
+.map-header-line {
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.map-container{
+  width: 100%;
+  height: 100%;
+}
+
+.payment-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 62px;
+  padding: 10px 12px;
+  border: 1px solid #e7e7e7;
+  border-radius: 9px;
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+.payment-option:has(input:checked) {
+  border-color: #e5a58f;
+  background: #fff8f2;
+  box-shadow: 0 0 0 1px rgba(237, 80, 57, .08);
+}
+.payment-option input { accent-color: #ed5039; }
+.payment-icon {
+  display: grid;
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 700;
+}
+.cod-icon { background: #e5f8ed; color: #21a45b; }
+.online-icon { background: #eee8ff; color: #7a42ce; }
+.payment-copy { display: flex; flex-direction: column; gap: 4px; }
+.payment-copy strong { color: #343a40; font-size: 12px; }
+.payment-copy small { color: #858585; font-size: 10px; }
+
+.order-summary { margin-bottom: 18px; }
+.summary-box {
+  padding: 12px;
+  border: 1px solid #aaa;
+  border-radius: 9px;
+  background: #fff;
+}
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 0;
+  color: #555b63;
+  font-size: 12px;
+}
+.summary-row strong { color: #454b52; }
+.item-row { font-size: 11px; }
+.summary-divider { height: 1px; margin: 4px 0; background: #eee; }
+.total-row { color: #e64c35; }
+.total-row strong { color: #e64c35; font-size: 14px; }
+
+.place-order-button {
+  width: 100%;
+  min-height: 42px;
+  border: 0;
+  border-radius: 8px;
+  background: #ff4b2b;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .checkout-page { padding: 18px 10px; }
+  .checkout-card { padding: 18px 15px; }
+  .checkout-map { height: 165px; }
+  .payment-options { grid-template-columns: 1fr; gap: 8px; }
+}

@@ -12,6 +12,7 @@ const connectDb = require("./config/db")
 const userRoutes = require("./routes/userRoutes");
 const shopRoutes = require("./routes/shopRoutes")
 const itemRoutes = require("./routes/itemRoutes")
+const cartRoutes = require("./routes/cartRoutes")
 
 
 
@@ -25,6 +26,9 @@ app.use("/api/auth", userRoutes);
 app.use("/api/shop", shopRoutes);
 
 app.use("/api/item", itemRoutes);
+
+app.use("/api/cart", cartRoutes);
+
 
 app.listen(PORT, () => {
     console.log("connecting to db");
